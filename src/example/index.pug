@@ -1,0 +1,45 @@
+extend __layout
+
+append config
+    - var title = "Index"
+    - var scripts = ["./script.js"]
+
+append body
+    +header("TOP")
+    +profile
+    main.self-introduction
+        div
+            h2 Self introduction
+        div
+            p ここに自己紹介を書きます
+    main
+        div.paragraph
+            h2 キャリア志向
+        div.paragraph
+            p どういったキャリアを歩みたいか記述
+    main.skill
+        .skill
+            h2 Front End
+            .skill-icons
+                i(@skill="html" href="front-end")
+                i(@skill="css" href="front-end")
+                i(@skill="javascript" href="front-end")
+                i(@skill="typescript" href="front-end")
+            .skill-icons
+                i(@skill="pug" href="front-end")
+                i(@skill="sass" href="front-end")
+                i(@skill="vue" href="front-end")         
+            p スキルセットについて簡単に記述
+        .skill
+            h2 Back End
+            .skill-icons
+                i(@skill="go")
+                i(@skill="nodejs")
+                i(@skill="cs")
+                i(@skill="java")
+                i(@skill="py")
+            .skill-icons
+                i(@skill="gulp" href="nodejs")
+                i(@skill="vite")
+            p スキルセットについて簡単に記述
+        

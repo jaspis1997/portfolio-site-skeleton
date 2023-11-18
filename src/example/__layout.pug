@@ -1,0 +1,37 @@
+extend ../component/layout
+
+append components
+    include __profile
+
+mixin Embedded(option)
+    block attribute
+        - const title = "Untitled"
+        - const about = ""
+        - const link = "http://example.com"
+        - const image = "/res/zenn.png"
+        - const favicon = "/res/logo-zenn.png"
+        - const icon = "/res/icon/cog.png"
+    article.embedded
+        a(href=option.link target="_blank" rel="noopener noreferrer")
+            div.about
+                span.title
+                    h1= option.title?option.title:title
+                span.about
+                    if(option.about)
+                        p= option.about
+                    if(option.icon==undefined || option.icon)
+                        span
+                            img.icon(src=icon)
+                if(option.favicon && option.link)
+                    span.link
+                        //- favicon
+                        img.favicon(src=option.favicon)
+                        span.text= option.link?option.link:link
+                        i.las.la-external-link-alt
+            div.image
+                img(src=option.image?option.image:image)
+
+mixin Project(option)
+    h3.title= option.title
+    block
+    +Embedded(option)

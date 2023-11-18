@@ -1,0 +1,48 @@
+extend __layout
+
+append config
+    - var title = "Works"
+
+append body
+    +header("Works","Works")
+    main
+        h2 Projects
+        h3.title Notionとは
+        +Embedded({
+            title: "Wiki、ドキュメント、プロジェクトがつながるコネクテッドワークスペース | Notion (ノーション)",
+            link:"https://www.notion.so/ja-jp",
+            about:"書く、計画する、共有する。AIを味方につけましょう。Notionは、より良く、より速く仕事ができるコネクテッドワークスペースです。",
+            image:"/res/notion.jpg",
+            favicon: "/res/logo-notion.png",
+            icon: false
+        })
+        +Project({
+            title: "Title 1",
+            link: "http://example.com",
+            about:"about...",
+            favicon: "/res/logo-notion.png",
+            image: "/res/notion.jpg"
+        })
+        +Project({
+            title: "Title 2",
+            link: "http://example.com",
+            about:"about...",
+            favicon: "/res/logo-notion.png",
+            image: "/res/notion.jpg"
+        })
+    main
+        h2 Article
+        +Embedded({
+            title: "Test Title 1",
+            link: "https://internal-beak-931.notion.site/e0fcaca6b46f478a867fab0c126ce270?pvs=4",
+            about: "test",
+            image: "/res/notion.jpg",
+            favicon:"/res/logo-notion.png"
+        })
+        +Embedded({
+            title: "Test Title 2",
+            link: "https://internal-beak-931.notion.site/e0fcaca6b46f478a867fab0c126ce270?pvs=4",
+            about: "test",
+            image: "/res/notion.jpg",
+            favicon:"/res/logo-notion.png"
+        })
