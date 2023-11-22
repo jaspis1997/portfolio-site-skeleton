@@ -25,9 +25,9 @@ Node.js のインストールが必要です。
 
 ## デモ
 
-![](https://github.com/jaspis1997/portfolio-site-skeleton/blob/master/images/image-1.png)
+![](https://github.com/jaspis1997/portfolio-site-skeleton/blob/main/images/image-1.png)
 
-![](https://github.com/jaspis1997/portfolio-site-skeleton/blob/master/images/image-2.png)
+![](https://github.com/jaspis1997/portfolio-site-skeleton/blob/main/images/image-2.png)
 
 ## 開始方法
 
