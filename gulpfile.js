@@ -29,13 +29,16 @@ const config = {
     watch : ["./**/*.pug","./**/*.js" , "./**/*.css"]
 }
 
-browserSync.init(config.browsersync)
-
 function pugCompile() {
     return gulp.src(config.pug.src)
-        .pipe(plumber())
-        .pipe(pug(config.pug.option))
-        .pipe(gulp.dest(config.pug.dist))    
+    .pipe(plumber())
+    .pipe(pug(config.pug.option))
+    .pipe(gulp.dest(config.pug.dist))    
+}
+
+function bsinit(cb){
+    browserSync.init(config.browsersync)
+    cb()
 }
 
 function bsreload(cb){
@@ -48,4 +51,4 @@ function watch(){
 }
 
 exports.compile = pugCompile
-exports.watch = gulp.series(watch)
+exports.watch = gulp.series(bsinit,watch)
