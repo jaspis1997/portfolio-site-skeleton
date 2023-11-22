@@ -1,0 +1,410 @@
+/* Font */
+@font-face{
+    font-family: "zen-regular";
+    src: url("/ZenMaruGothic-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "zen-light";
+    src: url("/ZenMaruGothic-Light.ttf") format("truetype");
+}
+/* reset */
+h3 {
+    font-size: 18px;
+}
+
+/* Common Styles */
+
+body{
+    background-color: #d1ebff;
+    margin: 0;
+    padding: 0;
+}
+.body {
+    margin: 5%;
+}
+
+@media print {
+    body {
+        background-color: white;
+    }
+}
+header , main {
+    background-color: white;
+    border-radius: 20px;
+    padding: 7px 0;
+    margin: 2.5em;
+}
+i {
+    font-size: 22px;
+}
+h1,h2,h3,label{
+    font-family: 'zen-light';
+    /* メインカラー */
+    color: #004CA0;
+}
+h1 , h2 {
+    margin: 1em 1.5em;
+    padding: 3px;
+    border-bottom: solid 2px #183B61;
+}
+p {
+    margin: 17px 3em;
+}
+* {
+    font-family: 'zen-regular';
+}
+
+/* Common UX Style */
+h2 {
+    transition: 1s;
+}
+h2[active] {
+    color: white;
+    background-color: #4f9cd9;
+    font-size: 28px;
+    transition: 1s;
+}
+h3[active] {
+    color: white;
+    background-color: #4f9cd9;
+    font-size: 21px;
+    transition: 1s;
+}
+
+/* Header Styles */
+header > div > ol {
+    list-style: none;   
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 7px;
+}
+header > div > ol > li {
+    transition: background-color 1s;
+}
+header > div > ol > li + li{
+    border-left: solid black 1px;
+}
+header > div > ol > li:hover {
+    transition: background-color 1s;
+    background-color: #4f9cd9;
+}
+header > div > ol > li:hover  a{
+    color: white;
+}
+header > div > ol > li:hover  i{
+    color: white;
+}
+header > div > ol > li > a{
+    font-size: 20px;
+    display: inline-block;
+    padding: 0.5em 3.5em;
+}
+
+/* Header > nav */
+nav > ol {
+    list-style-type: none;
+    display: flex;
+}
+nav > ol > li + li::before{
+    content: '>';
+    padding: 0.5em;
+}
+nav > ol > li {
+    display: flex;
+    align-items: center;
+}
+
+/* Footer Style */
+footer {
+    /* background-color: #55538d; */
+    background-color: #1a4a6e;
+    color: white;
+    display: flex;
+    justify-content: center;
+
+    padding: 4% 0px;
+}
+
+
+/* Comman Main */
+main > div {
+    margin: 3em;
+}
+.centerize{
+    text-align: center;
+}
+
+
+/* Main (Profile) Styles */
+main.profile > div > div{
+    margin: 0 1em;
+}
+span.name {
+    font-family: zen-light;
+    /* メインカラー */
+    color: #004CA0;
+    margin: 0 0.3em;
+    transition: font-size 0.5s;
+}
+span.ja.name{
+    font-size: 3em;
+}
+span.ro.name{
+    font-size: 2em;
+}
+div.nameblock{
+    text-align: center;
+}
+div.infomation {
+    display: flex;
+    justify-content: space-evenly;
+}
+main.profile h3 {
+    display: inline-block;
+    width: 5em;
+    margin: 0;
+}
+div.skill div {
+    margin: 0 5em;;
+}
+div.skill > div > a {
+    display: inline-block;
+}
+div.skill > div > a > img{
+    margin: 12px;
+    width: 48px;
+    height: 48px;
+    transition: 1s;
+}
+
+/* Main (Profile) UX Style*/
+span.ja.name:hover{
+    font-size: 3.5em;
+    transition: font-size 0.5s;
+}
+span.ro.name:hover{
+    font-size: 2.5em;
+    transition: font-size 0.5s;
+}
+div.skill > div > a:hover img{
+    width: 60px;
+    height: 60px;
+    transition: 1s;
+}
+
+/* Main (self-produce) Styles */
+
+/* Main Skillset */
+div.skill-icon-container{
+    margin: 0;
+}
+div.skill-icon-container div.skill-view{
+    margin: 0 1.5em;
+}
+div.skill-icon-container span.skillset{
+    display: flex;
+    flex-direction: row;
+}
+div.skill-icon-container span.skillset h3{
+    margin: 0;
+}
+
+/* article Embedded Style */
+
+article.embedded {
+    text-decoration: none;
+    border: solid 1px rgba(128, 128, 128, 0.568);
+    border-radius: 1.5em;
+    margin: 1em 5em;
+}
+article.embedded * {
+    text-decoration: none;
+    color: unset;
+}
+article.embedded a {
+    display: flex;
+}
+article.embedded div.about {
+    width: 85%;
+    
+    position: relative;
+    right: 0;
+}
+article.embedded img.icon{
+    width: 6em;
+    
+    position: absolute;
+    right: 3em;
+    top: -40px;
+    filter:  invert(50%) sepia(0%) saturate(11%) hue-rotate(143deg) brightness(101%) contrast(93%);
+}
+article.embedded:hover img.icon{
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-timing-function: cubic-bezier(0.5, 0.51, 0.51, 0.52);
+    animation-iteration-count: infinite;
+
+    filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%);
+}
+
+@keyframes rotate{
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+article.embedded {
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+}
+
+article.embedded span.about span{
+    position: relative;
+
+}
+article.embedded div.image {
+    width: 15%;
+}
+article.embedded div.image img{
+    display: block;
+    border-radius: 0 1.5em 1.5em 0; 
+    height: auto;
+    min-height: 100%;
+    max-height: 100%;
+    width: 100%;
+}
+
+article.embedded, article.embedded *{
+    transition: 0.5s;
+}
+article.embedded a:visited{
+    text-decoration: none;
+    color: unset;
+}
+
+article.embedded:hover{
+    background-color: #4f9cd9bb;
+}
+article.embedded:hover h1 ,
+article.embedded:hover p,
+article.embedded:hover span{
+    color: white;
+}
+
+article.embedded h1,
+article.embedded p,
+article.embedded span.link {
+    padding: 0;
+    margin: 0;
+}
+article.embedded h1 {
+    color: #004CA0;
+}
+article.embedded div.about{
+    display: flex;
+    flex-direction: column;
+}
+article.embedded span.title{
+    margin: 0.25em 1.5em;
+    display: inline-block;
+}
+article.embedded span.title h1{
+    border: none;
+    margin: 0;
+}
+article.embedded span.about{
+    margin: 0.25em 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+article.embedded span.link{
+    margin: 0.25em 1.5em;
+    display: flex;
+    align-items: center;
+}
+article.embedded span.link span.text{
+    max-width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+article.embedded img.favicon{
+    height: 1em;
+}
+h3.title{
+    margin: 18px 3em;
+    padding: 3px;
+    border-bottom: solid 1px #183B61;
+}
+
+
+@media screen and (max-width: 680px){
+    h1 , h2{
+        text-align: center;
+    }
+    header , main {
+        margin: 10px;
+        padding: 0;
+    }
+    header > ol {
+        padding: 0;
+    }
+    header > div > ol > li > a{
+        padding: 3px 14px;
+    }
+    main.profile > div {
+        padding: 0;
+    }
+    div.infomation {
+        display: flex;
+        flex-direction: column;
+    }
+    main > div {
+        margin: 0;
+    }
+    div.skill > div > a > img {
+        margin: 0;
+    }
+    div.skill > div.skill-icons {
+        margin: 0;
+        text-align: center;
+    }
+    span.ja.name{
+        font-size: 34px;
+    }
+    span.ro.name{
+        font-size: 18px;
+    }
+    div.nameblock{
+        margin: 1.5em 0;
+    }
+
+    div.skill-icon-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    h3.title{
+        margin: 2px;
+    }
+    article.embedded h1 {
+        font-size: 16px;
+    }
+    article.embedded span.about {
+        display: none;
+    }
+    article.embedded {
+        margin: 3px;
+    }
+    article.embedded div.image {
+        display: none;
+    }
+    article.embedded div.about {
+        width: 100%;
+    }
+}

@@ -1,0 +1,20 @@
+mixin header(title , location)
+    header
+        h1 #{title}
+        if locaion != "" && location != null
+            nav
+                //- 一段のネストまでは対応
+                ol
+                    li: a(href="./index.html") TOP
+                    li #{location}
+        //- 項目を増やす場合はここに記述
+        div: ol
+            li: a(href="./profile.html")
+                i.las.la-user
+                span Profile
+            li: a(href="./skill.html")
+                i.las.la-tools
+                span Skill
+            li: a(href="./works.html")
+                i.las.la-folder
+                span Works
