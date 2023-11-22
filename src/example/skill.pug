@@ -1,0 +1,47 @@
+extend __layout
+
+append config
+    - var title = "Skill"
+    - var scripts = ["/res/script/script.js" ]
+
+
+mixin Skillset(options)
+    div.skill
+        div.skill-icon-container
+            if(options.link)
+                img(src=`https://skillicons.dev/icons?i=${options.skill}&perline=5`)
+            else
+                i(\@skillset=options.skill \@level=options.level)
+        span
+            if(options.exp > 0)
+                p 趣味 #{options.exp}年程度
+            block
+
+append body
+    +header("Skill","Skill")
+    main.skillset
+        h2#heading-front-end Front End
+        div#skill-front-end
+            +Skillset({
+                skill:"html,css,javascript,typescript,pug,sass,vue",
+                exp:3,
+                link:true
+            })
+                p 何を作ったか
+    main.skillset
+        h2#heading-back-end Back End
+        div#skill-back-end
+            +Skillset({
+                skill:"go,nodejs,cs,java,py",
+                exp:3,
+                link:true
+            })
+                p 何を作ったか
+    main.skillset
+        h2#heading-program-language Proguram Language
+        +Skillset({
+            skill:"py",
+            level:5
+        })
+            p 何を作ったか
+            p 何ができるか

@@ -1,0 +1,19 @@
+extend __layout
+
+append config
+    - var title = "Profile"
+
+append body
+    +header("Profile","Profile")
+    +profile
+    //- 所有資格をここに記入
+    main.certification
+        h2 Certification - 資格
+        div
+            h3 国家試験
+            span: h4 基本情報技術者試験
+            span 平成YY年 MM月 合格
+    main.career
+        h2 キャリア
+        div
+            h3 特になし
