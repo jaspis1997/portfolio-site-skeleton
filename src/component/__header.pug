@@ -3,9 +3,11 @@ mixin header(title , location)
         h1 #{title}
         if locaion != "" && location != null
             nav
+                //- 一段のネストまでは対応
                 ol
                     li: a(href="./index.html") TOP
                     li #{location}
+        //- 項目を増やす場合はここに記述
         div: ol
             li: a(href="./profile.html")
                 i.las.la-user

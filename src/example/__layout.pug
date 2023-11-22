@@ -6,10 +6,8 @@ append components
 mixin Embedded(option)
     block attribute
         - const title = "Untitled"
-        - const about = ""
         - const link = "http://example.com"
         - const image = "/res/zenn.png"
-        - const favicon = "/res/logo-zenn.png"
         - const icon = "/res/icon/cog.png"
     article.embedded
         a(href=option.link target="_blank" rel="noopener noreferrer")
@@ -19,9 +17,12 @@ mixin Embedded(option)
                 span.about
                     if(option.about)
                         p= option.about
+                    //- iconを指定しないまたはfalseの時、アイコンを非表示にします
                     if(option.icon==undefined || option.icon)
                         span
                             img.icon(src=icon)
+                //- faviconと外部リンクが設定されているとき、表示されます
+                //- faviconはres配下に置くことが推奨です
                 if(option.favicon && option.link)
                     span.link
                         //- favicon
